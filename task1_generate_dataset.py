@@ -41,7 +41,8 @@ for i in range(1, N + 1):
         + 0.20 * prev_score
     )
     composite += np.random.normal(0, 0.08)  # real-world noise
-
+    if composite < 0.40:
+            yield_category = "Poor"
     if composite < 0.45:
         yield_category = "Poor"
     elif composite < 0.70:
